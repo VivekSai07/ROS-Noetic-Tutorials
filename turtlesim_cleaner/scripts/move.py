@@ -27,11 +27,12 @@ def move():
             vel_publisher.publish(vel_msg)
             t1 = rospy.Time.now().to_sec()
             curr_dist = speed * (t1 - t0)
-            print(f'Current Distance: {curr_dist}')
+            # print(f'Current Distance: {curr_dist}')
         
         vel_msg.linear.x = 0
         vel_publisher.publish(vel_msg)
-        move()
+        # move()
+        rospy.spin()
 
 
 if __name__ == '__main__':
